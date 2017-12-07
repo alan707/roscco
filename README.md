@@ -52,6 +52,12 @@ joy_node, roscco_teleop, and roscco_node.
 `joy_node` uses `/dev/js0` by default to change this see the
 [joystick documentation](http://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystick).
 
+In order to use Linux's native socketcan network interface, you will need to install `can-utils` utility:
+```
+sudo apt-get install can-utils
+```
+
+Once installed, you can define the charachteristics of the can0 network interface:
 ```
 sudo ip link set can0 type can bitrate 500000
 sudo ip link set up can0
